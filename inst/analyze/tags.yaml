@@ -1,0 +1,60 @@
+perfect_info:
+  requires: tg
+  descr: |
+    Do we have a game with perfect information?
+    We check it by testing whether all information sets are singletons.
+
+    Note that moves of nature after actions are allowed. We could rewrite
+    the game in an equivalent fashion and put the moves of nature before the actions,
+    but make them unobservable. The game would then, however, be classified
+    as a game with imperfect information.
+sim_move:
+  requires: tg
+  descr: |
+    Do we have a simultaneous move game?
+    We need at least two players that can perform actions. Each player shall have only
+    one information set. If a player takes multiple actions in a stage this counts only
+    as a single information set (need to implement this feature).
+    A sequential game that uses a strategy method is not classified as a simultaneous move
+    game. One can search for strategy method separately.
+
+has_multi_actions:
+  requires: tg
+  descr: |
+    Has at least one player more than one action variable?
+
+num_variants:
+  requires: rg
+  descr: |
+    The number of variants of this particular gameId.
+
+num_players:
+  requires: rg
+  descr: |
+    The number of players.
+
+num_action_players:
+  requires: tg
+  descr: |
+    The number of players that possible can take an action.
+
+has_passive_players:
+  requires: tg
+  descr: |
+    Is there at least one player, who can never take an action?
+
+dictator_like:
+  default: FALSE
+  requires: tg
+  descr: |
+    Only computed if there is one action player and at least one passive players.
+    If passive players don't have a fixed payoff, we mark it as
+    dictator like. (We need to improve the classification and remove games
+    in which payoffs only vary due to moves of nature). This classification
+    also includes third party dictator games and games in which the dictator
+    cannot influence her own payoff.
+
+has_chatbox:
+  default: FALSE
+  descr: |
+    Does some variant use a chatbox addin?

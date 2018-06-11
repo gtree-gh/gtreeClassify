@@ -1,0 +1,16 @@
+Package: gtreeClassify
+Type: Package
+Title: gtree functions to classify games
+Version: 0.0.1
+Date: 2018-06-11
+Author: Sebastian Kranz
+Maintainer: Sebastian Kranz <sebastian.kranz@uni-ulm.de>
+Description:
+  For example, is it a perfect information game.
+  Is it a simple two stage game.
+  Is a dictator like game...
+License: GPL >= 2.0
+Depends:
+  gtreeCore
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
